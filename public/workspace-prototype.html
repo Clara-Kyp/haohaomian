@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN" data-type="software">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="page-type" content="software">
+  <meta name="site-kind" content="software">
+  <title>好好面 · 面试工作台原型</title>
+  <link rel="stylesheet" href="/workspace-prototype.css">
+</head>
+<body>
+  <a class="skip" href="#content">跳到工作区</a>
+  <div class="shell">
+    <aside class="rail">
+      <a class="brand" href="/workspace-prototype"><img class="brand-image" src="/brand/haohaomian.png" alt="好好面，好好准备，好好面试"></a>
+      <nav id="nav" aria-label="工作台导航"></nav>
+    </aside>
+    <main id="content" tabindex="-1"></main>
+    <aside class="assistant" id="assistant" aria-label="当前操作辅助区"></aside>
+  </div>
+  <p id="notice" role="status" aria-live="polite"></p>
+  <script type="module" src="/workspace-prototype.js"></script>
+</body>
+</html>
