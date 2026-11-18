@@ -8,7 +8,7 @@
 
 **每练一次，都有收获。**
 
-[产品首页](https://clara-kyp.github.io/haohaomian/) · [快速开始](#快速开始) · [部署指南](docs/deployment.md)
+[下载本地体验版](https://github.com/Clara-Kyp/haohaomian/releases/latest/download/haohaomian-local.zip) · [产品首页](https://clara-kyp.github.io/haohaomian/) · [本地使用指南](docs/local-setup.md)
 
 ## 面试前，准备更到位
 
@@ -38,32 +38,30 @@
 | 整场报告 | 六维分析、亮点不足、原文核对 |
 | 我的收藏 | 保存好答案，面试前集中复习 |
 | 录音复盘 | 导入整段录音，整理并核对问答 |
-| 邀请内测 | 一次性邀请码注册，各账户独立保存资料与配置 |
+| 本地体验 | 无需注册，练习资料保存在自己的电脑 |
 
 ## 快速开始
 
-需要 **Node.js 24+** 和 **FFmpeg**。
+**下载、解压，在自己的电脑上开始练习。无需注册和邀请码。**
+
+1. [下载本地体验版 ZIP](https://github.com/Clara-Kyp/haohaomian/releases/latest/download/haohaomian-local.zip)，解压到一个固定目录。
+2. 安装 [Node.js 24 LTS](https://nodejs.org/zh-cn/download) 和 [FFmpeg](https://ffmpeg.org/download.html)。
+3. 在解压目录打开终端，运行：
 
 ```sh
 npm ci
-npm start
+npm run local
 ```
 
-打开 **http://localhost:3000/workspace**。
+打开 **http://localhost:3000/workspace**。以后使用，只需在同一目录运行 `npm run local`；停止时按 `Ctrl+C`。
 
-在「模型设置」配置自己的模型与 API Key。对话、图片支持阿里云百炼、Kimi、MiniMax 和 OpenAI；语音转写支持 MiniMax 和阿里云。两项服务可以分别配置。
+这是需要 Node.js 环境的本地源码体验版。详细安装步骤和常见问题见[本地使用指南](docs/local-setup.md)。已有 Docker 的用户也可按指南直接启动，无需单独安装 Node.js 和 FFmpeg。
 
-默认本机模式适合个人使用。多人内测请按照[部署指南](docs/deployment.md)初始化管理员、持久磁盘和 HTTPS。
+在「模型设置」填写自己的模型与 API Key，即可使用 AI 出题、参考答案、转写和报告。对话、图片支持阿里云百炼、Kimi、MiniMax 和 OpenAI；语音转写支持 MiniMax 和阿里云。服务费用由对应模型服务商收取。
 
-## 内测注册
+练习、录音、收藏和模型配置保存在本机 `data/` 目录。使用 AI 功能时，相关材料会发送到你配置的模型服务商。升级时保留完整的 `data/`，包括 `workspace/.key`。
 
-打开部署实例的 `/account?mode=register`，输入邀请码、邮箱和密码。通用邀请码有效期 7 天，兑换一次后失效。管理员在「账户与邀请」中生成邀请，也可以一次生成 10 个。
-
-## 部署
-
-GitHub Pages 自动发布 `site/` 中的产品首页。完整工作台使用仓库内的 Dockerfile 部署 Node 服务，并为 `/app/data` 挂载持久磁盘。推送 `main` 会自动更新产品首页。
-
-账户、简历、录音和密钥保存在部署实例的数据目录。备份时完整保留该目录，包括 `workspace/.key`。
+GitHub Pages 提供产品介绍和下载入口。完整练习在本机运行。需要自行部署多人版本时，可参考[部署指南](docs/deployment.md)。
 
 ## 开发与测试
 

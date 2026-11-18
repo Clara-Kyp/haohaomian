@@ -11,7 +11,8 @@
     "test": "npm run build && playwright test",
     "prototype": "npm run build && PORT=3001 node dist/server.js",
     "dev": "vite --open /workspace.html",
-    "prototype:report-review": "node scripts/report-review-preview.mjs"
+    "prototype:report-review": "node scripts/report-review-preview.mjs",
+    "local": "node scripts/start-local.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.0",

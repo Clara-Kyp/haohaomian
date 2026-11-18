@@ -20,7 +20,7 @@ SECURE_COOKIES=1
 
 管理员凭据仅在空数据目录首次启动时用于初始化。通过HTTPS访问`/workspace`，在「账户与邀请」生成邀请码。通用邀请码有效期7天，每码一次，使用者填写自己的邮箱。
 
-域名或访问地址确认后，将产品首页的开始使用按钮连接到工作台的`/account?mode=register`。
+当前产品首页提供本地体验版下载，不连接在线工作台。本机体验无需邀请码。若自行提供多人服务，可单独分享实例的 `/account?mode=register` 注册地址。
 
 ## 数据与备份
 
@@ -28,4 +28,4 @@ SECURE_COOKIES=1
 
 ## 本机启动
 
-安装Node.js 24+和FFmpeg，运行`npm ci`、`npm start`。访问`http://localhost:3000/workspace`。本机模式与多人实例使用独立数据目录。
+请按照[本地使用指南](local-setup.md)启动。安装 Node.js 24+ 和 FFmpeg 后运行 `npm ci`、`npm run local`，访问 `http://localhost:3000/workspace`。本机体验无需邀请码。
